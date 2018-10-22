@@ -4,16 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".TestOneDrawActivity">
 
     <TextView
-        android:id="@+id/tv01TestOne"
-        style="@style/MainActivityItem"
-        android:text="1.hencoder第7节 绘制基础以及图像和文字的测量" />
-
-    <View
-        android:id="@+id/line_1"
-        style="@style/MainActivityLine"
-        app:layout_constraintTop_toBottomOf="@id/tv01TestOne" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" hencoder07 绘制基础以及图像和文字的测量 " />
 
 </android.support.constraint.ConstraintLayout>
