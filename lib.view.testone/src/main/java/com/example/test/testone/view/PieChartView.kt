@@ -48,6 +48,7 @@ class PieChartView : View {
         for (index in 1 until arrayAngles.size) {
             paint.color = Color.parseColor(colors[index - 1])
 
+            //我的做法，没有老师的做法好。老师用到了canvas?.translate()
             if (index == 3) {
                 val offsetCenterAngle = (arrayAngles[index] - arrayAngles[index - 1]) / 2.0f + arrayAngles[index - 1]
                 val offsetCenterX = (Math.cos(getAngleRadians(offsetCenterAngle)) * offsetLength).toFloat() + centerX

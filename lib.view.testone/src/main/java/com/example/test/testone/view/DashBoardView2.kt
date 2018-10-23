@@ -82,7 +82,11 @@ class DashBoardView2 : View {
         canvas?.drawLine(0.0f, 0.0f, needleLength * Math.cos(getAngleRadians(currentAngle)).toFloat(), needleLength * Math.sin(getAngleRadians(currentAngle)).toFloat(), paint)
         canvas?.translate(-centerX, -centerY)
 
-
+        //可以这么做哦
+//        canvas?.save()
+//        canvas?.translate(centerX, centerY)
+//        canvas?.drawLine(0.0f, 0.0f, needleLength * Math.cos(getAngleRadians(currentAngle)).toFloat(), needleLength * Math.sin(getAngleRadians(currentAngle)).toFloat(), paint)
+//        canvas?.restore()
     }
 
 }
