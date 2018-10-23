@@ -33,7 +33,7 @@ class CircleImageView : View {
 
     init {
         bitmap = getBitmap(imageWidth.toInt(), R.drawable.cheng)
-        xFermode = Xfermode()
+        xFermode = PorterDuffXfermode(PorterDuff.Mode.SRC_IN)
     }
 
     override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {
@@ -51,10 +51,11 @@ class CircleImageView : View {
 
     override fun onDraw(canvas: Canvas?) {
         super.onDraw(canvas)
-        paint.xfermode = xFermode
+        canvas?.drawCircle(centerX, centerY, imageWidth + padding, paint)
         val saved = canvas?.saveLayer(imageViewRect, paint)
-        canvas?.drawBitmap(bitmap, bitmapRect, imageViewRect, paint)
         canvas?.drawCircle(centerX, centerY, imageWidth, paint)
+        paint.xfermode = xFermode
+        canvas?.drawBitmap(bitmap, bitmapRect, imageViewRect, paint)
         paint.xfermode = null
         saved?.let {
             canvas.restoreToCount(saved)
