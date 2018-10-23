@@ -16,7 +16,8 @@
             android:layout_marginTop="15dp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:visibility="gone"/>
 
         <com.example.test.testone.view.DashBoardView2
             android:id="@+id/dashBoardView2"
@@ -35,5 +36,15 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/dashBoardView2" />
+
+        <com.example.test.testone.view.CircleImageView
+            android:id="@+id/circleImageView"
+            android:background="#ff00ff"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="15dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/pieChartView" />
     </android.support.constraint.ConstraintLayout>
 </ScrollView>
