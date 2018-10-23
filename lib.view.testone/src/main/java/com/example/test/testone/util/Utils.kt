@@ -11,3 +11,7 @@ import android.content.res.Resources
 fun dp2px(dp: Float): Float {
     return Resources.getSystem().displayMetrics.density * dp
 }
+
+fun getAngleRadians(angle: Float): Double {
+    return angle * Math.PI / 180
+}
