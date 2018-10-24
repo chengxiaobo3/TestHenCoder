@@ -9,7 +9,7 @@
     <TextView
         android:id="@+id/tv01TestOne"
         style="@style/MainActivityItem"
-        android:text="1.hencoder第7节 绘制基础以及图像和文字的测量" />
+        android:text="1.hencoder第6节 绘制基础以及图像和文字的测量" />
 
     <View
         android:id="@+id/line_1"
