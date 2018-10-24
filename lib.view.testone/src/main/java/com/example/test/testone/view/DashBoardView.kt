@@ -8,7 +8,7 @@ import android.view.View
 import com.example.test.testone.util.dp2px
 
 /**
- * hencoder07 仪表盘
+ * hencoder06 仪表盘
  * @author chengxiaobo
  * @time 2018/10/22 13:15
  */
@@ -49,8 +49,8 @@ class DashBoardView : View {
     @SuppressLint("DrawAllocation")
     override fun onDraw(canvas: Canvas?) {
         super.onDraw(canvas)
-//        canvas?.drawArc(rect, 120.0f, 300.0f, false, paint)
 
+        paint.pathEffect = null
         canvas?.drawPath(path, paint)
 
         val dashPathEffect = DashPathEffect(floatArrayOf(dp2px(5.0f), dp2px(10.0f)), 0.0f)
@@ -58,5 +58,6 @@ class DashBoardView : View {
         paint.pathEffect = dashPathEffect
 
         canvas?.drawPath(path, paint)
+        paint.pathEffect = null
     }
 }

@@ -9,7 +9,7 @@ import com.example.test.testone.util.dp2px
 import com.example.test.testone.util.getBitmap
 
 /**
- * hencoder07 圆形图片
+ * hencoder06 圆形图片
  * @author chengxiaobo
  * @time 2018/10/22 16:15
  */

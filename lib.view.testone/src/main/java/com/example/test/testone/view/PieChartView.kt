@@ -9,7 +9,7 @@ import com.example.test.testone.util.dp2px
 import com.example.test.testone.util.getAngleRadians
 
 /**
- * hencoder07 饼状图
+ * hencoder06 饼状图
  * @author chengxiaobo
  * @time 2018/10/23 13:35
  */
