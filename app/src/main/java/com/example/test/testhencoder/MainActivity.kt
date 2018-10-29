@@ -3,6 +3,7 @@ package com.example.test.testhencoder
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import com.example.test.testone.Test7DrawActivity
 import com.example.test.testone.TestOneDrawActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -19,6 +20,10 @@ class MainActivity : AppCompatActivity() {
 
         tv01TestOne.setOnClickListener {
             startActivity(Intent(this@MainActivity, TestOneDrawActivity::class.java))
+        }
+
+         tv07.setOnClickListener {
+            startActivity(Intent(this@MainActivity, Test7DrawActivity::class.java))
         }
     }
 }

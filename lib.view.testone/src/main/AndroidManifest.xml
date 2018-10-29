@@ -4,6 +4,7 @@
 
     <application>
         <activity android:name=".TestOneDrawActivity"></activity>
+        　<activity android:name=".Test7DrawActivity"></activity>
     </application>
 
 </manifest>
