@@ -9,9 +9,9 @@ import com.example.test.testone.util.dp2px
 /**
  * hencoder07 居中的TextView
  * @author chengxiaobo
- * @time 2018/10/29 23:15
+ * @time 2018/10/30 23:15
  */
-class CircleTextView : View {
+class CircleTextView2 : View {
 
     constructor(context: Context?) : super(context)
     constructor(context: Context?, attrs: AttributeSet?) : super(context, attrs)
@@ -23,7 +23,6 @@ class CircleTextView : View {
     private var strokWidth = dp2px(10.0f)
     private var paint = Paint(Paint.ANTI_ALIAS_FLAG)
     private var rect = RectF()
-    private var rectForText = Rect()
     private lateinit var fontMetrics: Paint.FontMetrics
     private val text = "abb"
     private val text2 = "abg"
@@ -53,10 +52,8 @@ class CircleTextView : View {
         paint.style = Paint.Style.FILL;
         paint.textAlign = Paint.Align.CENTER
         fontMetrics = paint.getFontMetrics()
-        paint.getTextBounds(text, 0, text.length, rectForText)
-        canvas?.drawText(text, centerX, centerY - (rectForText.bottom + rectForText.top) / 2.0f, paint)
-        paint.getTextBounds(text2, 0, text.length, rectForText)
+        canvas?.drawText(text, centerX, centerY - (fontMetrics.ascent + fontMetrics.descent) / 2.0f, paint)
         paint.color = Color.parseColor("#ff0000")
-        canvas?.drawText(text2, centerX, centerY - (rectForText.bottom + rectForText.top) / 2.0f, paint)
+        canvas?.drawText(text2, centerX, centerY - (fontMetrics.ascent + fontMetrics.descent) / 2.0f, paint)
     }
 }
