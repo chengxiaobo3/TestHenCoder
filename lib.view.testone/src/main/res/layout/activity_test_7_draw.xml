@@ -15,6 +15,7 @@
         android:visibility="visible"
         app:layout_constraintTop_toTopOf="parent" />
 
+
     <com.example.test.testone.view.L07.CircleTextView2
         android:id="@+id/circleImageView2"
         android:layout_width="150dp"
@@ -23,6 +24,13 @@
         android:visibility="visible"
         app:layout_constraintLeft_toRightOf="@+id/circleImageView"
         app:layout_constraintTop_toTopOf="@+id/circleImageView" />
+
+    <com.example.test.testone.view.L07.BreakTextView
+        android:id="@+id/breakTextView"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="#0000ff"
+        app:layout_constraintTop_toBottomOf="@id/circleImageView2" />
 
 
 </android.support.constraint.ConstraintLayout>
