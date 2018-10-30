@@ -5,9 +5,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".TestOneDrawActivity">
+    tools:context=".Test6DrawActivity">
 
-    <com.example.test.testone.view.l07.CircleTextView
+    <com.example.test.testone.view.L07.CircleTextView
         android:id="@+id/circleImageView"
         android:layout_width="150dp"
         android:layout_height="150dp"
@@ -15,7 +15,7 @@
         android:visibility="visible"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.example.test.testone.view.l07.CircleTextView2
+    <com.example.test.testone.view.L07.CircleTextView2
         android:id="@+id/circleImageView2"
         android:layout_width="150dp"
         android:layout_height="150dp"

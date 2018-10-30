@@ -1,4 +1,4 @@
-package com.example.test.testone.view
+package com.example.test.testone.view.L06
 
 import android.annotation.SuppressLint
 import android.content.Context

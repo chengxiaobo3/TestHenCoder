@@ -5,9 +5,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".TestOneDrawActivity">
+    tools:context=".Test6DrawActivity">
 
-    <com.example.test.testone.view.DashBoardView
+    <com.example.test.testone.view.L06.DashBoardView
         android:id="@+id/dashBoardView"
         android:layout_width="150dp"
         android:layout_height="150dp"
@@ -17,7 +17,7 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.example.test.testone.view.DashBoardView2
+    <com.example.test.testone.view.L06.DashBoardView2
         android:id="@+id/dashBoardView2"
         android:layout_width="150dp"
         android:layout_height="150dp"
@@ -25,7 +25,7 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/dashBoardView" />
 
-    <com.example.test.testone.view.PieChartView
+    <com.example.test.testone.view.L06.PieChartView
         android:id="@+id/pieChartView"
         android:layout_width="150dp"
         android:layout_height="150dp"
@@ -33,7 +33,7 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/dashBoardView2" />
 
-    <com.example.test.testone.view.CircleImageView
+    <com.example.test.testone.view.L06.CircleImageView
         android:id="@+id/circleImageView"
         android:layout_width="150dp"
         android:layout_height="150dp"

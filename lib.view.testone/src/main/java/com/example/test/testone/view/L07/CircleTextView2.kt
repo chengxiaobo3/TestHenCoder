@@ -1,4 +1,4 @@
-package com.example.test.testone.view.l07
+package com.example.test.testone.view.L07
 
 import android.content.Context
 import android.graphics.*

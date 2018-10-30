@@ -3,7 +3,7 @@
     package="com.example.test.testone">
 
     <application>
-        <activity android:name=".TestOneDrawActivity"></activity>
+        <activity android:name=".Test6DrawActivity"></activity>
         　<activity android:name=".Test7DrawActivity"></activity>
     </application>
 
