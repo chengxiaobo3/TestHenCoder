@@ -24,7 +24,7 @@ class CircleTextView : View {
     private var paint = Paint(Paint.ANTI_ALIAS_FLAG)
     private var rect = RectF()
     private var rectForText = Rect()
-    private val text = "abcdefg"
+    private val text = "abc"
 
     override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {
         super.onSizeChanged(w, h, oldw, oldh)
@@ -51,7 +51,7 @@ class CircleTextView : View {
         paint.style = Paint.Style.FILL;
         paint.textAlign = Paint.Align.CENTER
         paint.getTextBounds(text, 0, text.length, rectForText)
-        canvas?.drawText("abc", centerX, centerY - (rectForText.bottom + rectForText.top) / 2.0f, paint)
+        canvas?.drawText(text, centerX, centerY - (rectForText.bottom + rectForText.top) / 2.0f, paint)
         paint.textAlign=Paint.Align.LEFT
 //        canvas?.drawText("abcde", 0.0f, height.toFloat(), paint)
 
