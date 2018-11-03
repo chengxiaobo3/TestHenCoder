@@ -28,3 +28,5 @@ fun View.getBitmap(widthPX: Int, resourceId: Int): Bitmap {
     options.inTargetDensity = widthPX
     return BitmapFactory.decodeResource(this.resources, resourceId, options)
 }
+
+val BREAK_TEXT="Make installs smaller and faster for your users. Upload your app using Android's new app publishing format and Google Play's Dynamic Delivery to generate and serve APKs that are optimized for each user's device.Make installs smaller and faster for your users. Upload your app using Android's new app publishing format "
