@@ -20,35 +20,32 @@ class TestCanvasCamera : View {
     constructor(context: Context?, attrs: AttributeSet?) : super(context, attrs)
     constructor(context: Context?, attrs: AttributeSet?, defStyleAttr: Int) : super(context, attrs, defStyleAttr)
 
-    private var imageWidth = 0.0f
+    private var halfImageWidth = 0.0f
     private var centerX = 0.0f
     private var centerY = 0.0f
 
-    private lateinit var sourceRect1: Rect
-    private lateinit var sourceRect2: Rect
-    private lateinit var destRect1: Rect
-    private lateinit var destRect2: Rect
+    private lateinit var sourceRect: Rect
+    private lateinit var destRect: Rect
     private lateinit var bitmap: Bitmap
     private val paint = Paint(Paint.ANTI_ALIAS_FLAG)
     private val camera: Camera = Camera()
 
     init {
-        camera.setLocation(0.0f, 0.0f, -dp2px(12.0f))
+        camera.setLocation(0.0f, 0.0f, -12.0f)
+        camera.rotateX(30.0f)
     }
 
     override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {
         super.onSizeChanged(w, h, oldw, oldh)
 
-        imageWidth = width / 2.5f
+        halfImageWidth = width / 2.5f
         centerX = width / 2.0f
         centerY = height / 2.0f
 
-        bitmap = getBitmap(imageWidth.toInt(), R.drawable.cheng)
-        destRect1 = Rect((centerX - imageWidth).toInt(), (centerY - imageWidth).toInt(), (centerX + imageWidth).toInt(), (centerY).toInt())
-        destRect2 = Rect((centerX - imageWidth).toInt(), (centerY).toInt(), (centerX + imageWidth).toInt(), (centerY + imageWidth).toInt())
+        bitmap = getBitmap((halfImageWidth * 2).toInt(), R.drawable.rengwuxian)
+        destRect = Rect((centerX - halfImageWidth).toInt(), (centerY - halfImageWidth).toInt(), (centerX + halfImageWidth).toInt(), (centerY + halfImageWidth).toInt())
         val bitmapWidth = if (bitmap.width > bitmap.height) bitmap.height else bitmap.width
-        sourceRect1 = Rect(0, 0, bitmapWidth, bitmapWidth / 2)
-        sourceRect2 = Rect(0, bitmapWidth / 2, bitmapWidth, bitmapWidth)
+        sourceRect = Rect(0, 0, bitmapWidth, bitmapWidth)
 
 
     }
@@ -56,17 +53,24 @@ class TestCanvasCamera : View {
     override fun onDraw(canvas: Canvas?) {
         super.onDraw(canvas)
 
-        canvas?.drawBitmap(bitmap, sourceRect1, destRect1, paint)
-
-        camera.save()
         canvas?.save()
         canvas?.translate(centerX, centerY)
-        camera.rotateX(45.0f)
-        camera.applyToCanvas(canvas)
+        canvas?.rotate(-20.0f)
+        canvas?.clipRect(-halfImageWidth * 2, -halfImageWidth * 2, halfImageWidth * 2, 0.0f)
+        canvas?.rotate(20.0f)
         canvas?.translate(-centerX, -centerY)
-        canvas?.drawBitmap(bitmap, sourceRect2, destRect2, paint)
+        canvas?.drawBitmap(bitmap, sourceRect, destRect, paint)
         canvas?.restore()
-        camera.restore()
+
+        canvas?.save()
+        canvas?.translate(centerX, centerY)
+        canvas?.rotate(-20.0f)
+        camera.applyToCanvas(canvas)
+        canvas?.clipRect(-halfImageWidth * 2, 0.0f, halfImageWidth * 2, halfImageWidth * 2)
+        canvas?.rotate(20.0f)
+        canvas?.translate(-centerX, -centerY)
+        canvas?.drawBitmap(bitmap, sourceRect, destRect, paint)
+        canvas?.restore()
 
     }
 }
