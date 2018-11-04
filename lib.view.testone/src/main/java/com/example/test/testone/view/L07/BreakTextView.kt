@@ -14,6 +14,11 @@ import com.example.test.testone.util.getBitmap
 import kotlinx.android.synthetic.main.activity_test_7_draw.view.*
 import org.w3c.dom.Text
 
+/**
+ * hencoder07 居中的TextView
+ * @author chengxiaobo
+ * @time 2018/10/30 23:15
+ */
 class BreakTextView : View {
 
     constructor(context: Context?) : super(context)

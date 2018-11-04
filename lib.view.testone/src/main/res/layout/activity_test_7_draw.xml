@@ -32,6 +32,13 @@
         android:background="#0000ff"
         app:layout_constraintTop_toBottomOf="@id/circleImageView2" />
 
+    <com.example.test.testone.view.L07.CoordinateSystem
+        android:id="@+id/coordinateSystem"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="#ff0000"
+        app:layout_constraintTop_toBottomOf="@id/breakTextView" />
+
 
 </android.support.constraint.ConstraintLayout>
 
