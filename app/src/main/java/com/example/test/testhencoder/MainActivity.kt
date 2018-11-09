@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import com.example.test.testone.Test7DrawActivity
 import com.example.test.testone.Test6DrawActivity
+import com.example.test.testone.Test8DrawActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 /**
@@ -22,8 +23,12 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this@MainActivity, Test6DrawActivity::class.java))
         }
 
-         tv07.setOnClickListener {
+        tv07.setOnClickListener {
             startActivity(Intent(this@MainActivity, Test7DrawActivity::class.java))
+        }
+
+        tv08.setOnClickListener {
+            startActivity(Intent(this@MainActivity, Test8DrawActivity::class.java))
         }
     }
 }
