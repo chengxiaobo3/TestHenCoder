@@ -58,7 +58,6 @@ class FlipboardAnimation : View {
         postDelayed({
             val rotateDegreeAnimation = getRotateDegreeAnimation()
             val flipBottomDegreeAnimation = getFlipBottomDegreeAnimation()
-//            val flipboardAnimationReverse = getFlipBottomDegreeAnimationReverse()
             val flipTopDegreeAnimation = getFlipTopDegreddAnimation()
             val animatorSet = AnimatorSet()
             animatorSet.playSequentially(flipBottomDegreeAnimation, rotateDegreeAnimation, flipTopDegreeAnimation)
