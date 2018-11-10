@@ -5,9 +5,12 @@
     <application>
         <activity android:name=".Test6DrawActivity" />
 
+
         　
+
         <activity android:name=".Test7DrawActivity" />
-        <activity android:name=".Test8DrawActivity"></activity>
+        <activity android:name=".Test8DrawActivity" />
+        <activity android:name=".Test9DrawActivity"></activity>
     </application>
 
 </manifest>
