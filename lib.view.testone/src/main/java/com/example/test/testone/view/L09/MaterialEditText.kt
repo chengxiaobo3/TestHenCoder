@@ -4,12 +4,14 @@ import android.animation.Animator
 import android.animation.ObjectAnimator
 import android.animation.PropertyValuesHolder
 import android.content.Context
+import android.content.res.TypedArray
 import android.graphics.Canvas
 import android.graphics.Paint
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.AttributeSet
 import android.widget.EditText
+import com.example.test.testone.R
 import com.example.test.testone.util.dp2px
 
 /**
@@ -21,12 +23,16 @@ import com.example.test.testone.util.dp2px
 class MaterialEditText : EditText {
 
     constructor(context: Context?) : super(context)
-    constructor(context: Context?, attrs: AttributeSet?) : super(context, attrs)
-    constructor(context: Context?, attrs: AttributeSet?, defStyleAttr: Int) : super(context, attrs, defStyleAttr)
+    constructor(context: Context?, attrs: AttributeSet?) : super(context, attrs) {
+        init(context, attrs)
+    }
+
+    constructor(context: Context?, attrs: AttributeSet?, defStyleAttr: Int) : super(context, attrs, defStyleAttr) {
+        init(context, attrs)
+    }
 
     //自己仿写项目过程中，遇到的问题。
     //1.padding是在 xml 里面定义好呢，还是在materialEidtText里面定义呢？ 不能在程序中设置，否则edittext的text的位置就不对了
-    //2.应该是drawText，那么动画怎么实现的呢？
 
     private val paint = Paint(Paint.ANTI_ALIAS_FLAG)
     //    private var paddingTop = dp2px(40.0f)
@@ -35,6 +41,7 @@ class MaterialEditText : EditText {
     private var tiptextSize = dp2px(16.0f)
     private val tips: String = hint.toString()
     private var tipAnimation: ObjectAnimator? = null
+    private var isShowFloatingLable = false
 
     private var tipX = dp2px(3.0f)
     private var tipY = 0.0f
@@ -63,27 +70,37 @@ class MaterialEditText : EditText {
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
 
-                if (isHasContent) {
+                if (isShowFloatingLable) {
+                    if (isHasContent) {
 
-                    //editText内容从有->无，隐藏提示动画
-                    if (s.toString().isEmpty()) {
-                        getTranslateAnimation()?.reverse()
-                    }
-                } else {
+                        //editText内容从有->无，隐藏提示动画
+                        if (s.toString().isEmpty()) {
+                            getTranslateAnimation()?.reverse()
+                        }
+                    } else {
 
-                    //editText内容从无->有,显示提示动画
-                    if (!s.toString().isEmpty()) {
-                        getTranslateAnimation()?.start()
-                        isShowTip = true
+                        //editText内容从无->有,显示提示动画
+                        if (!s.toString().isEmpty()) {
+                            getTranslateAnimation()?.start()
+                            isShowTip = true
+                        }
                     }
+                    isHasContent = !s.toString().isEmpty()
                 }
-                isHasContent = !s.toString().isEmpty()
+
             }
         })
 
         if (text.toString().isNotEmpty()) {
             setSelection(text.toString().length)
         }
+    }
+
+    private fun init(context: Context?, attrs: AttributeSet?) {
+        val typedArray = context?.obtainStyledAttributes(attrs, R.styleable.MaterialEditText)
+
+        isShowFloatingLable = typedArray?.getBoolean(R.styleable.MaterialEditText_isShowFloatingLabel, false) == true
+        typedArray?.recycle()
     }
 
     override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {
@@ -103,7 +120,7 @@ class MaterialEditText : EditText {
 
         paint.alpha = transparency
 
-        if (isShowTip)
+        if (isShowFloatingLable && isShowTip)
             canvas?.drawText(tips, tipX, tipY, paint)
     }
 
