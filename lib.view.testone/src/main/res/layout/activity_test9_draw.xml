@@ -6,11 +6,17 @@
     android:layout_height="match_parent"
     tools:context=".Test9DrawActivity">
 
-    <com.example.test.testone.view.L09.MaterialEditText
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="userName"
-        android:paddingTop="30dp"
-        app:isShowFloatingLabel="true" />
+        android:background="#30ff00ff">
+
+        <com.example.test.testone.view.L09.MaterialEditText
+            android:id="@+id/met"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="userName"
+            app:isShowFloatingLabel="true" />
+    </FrameLayout>
 
 </android.support.constraint.ConstraintLayout>
